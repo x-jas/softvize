@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: Arial, sans-serif;
+}
+body {
+    background: #FFF;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+}
+#container {
+    width: 350px;
+    margin: 0 auto;
+    padding: 20px;
+}
+h1 {
+    font-size: 30px;
+    text-align: center;
+}
+form {
+    margin-top: 20px;
+}
+button {
+    color: #FFF;
+    margin-right: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.red {
+    background: #FF0000;
+}
+.green {
+    background: #28A745;
+}
+.blue {
+    background: #007BFF;
+}
+li {
+    border: 1px solid #000;
+    margin-top: 15px;
+    padding: 15px;
+    cursor: pointer;
+}
+input,
+textarea {
+    width: 100%;
+    border: 1px solid #000;
+    margin-bottom: 15px;
+    padding: 10px;
+}
