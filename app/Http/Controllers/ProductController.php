@@ -18,7 +18,10 @@ class ProductController extends Controller
 
     public function display($id, Request $request): JsonResponse
     {
+        $code = $request->query('code', '');
+
         $product = Product::findOrFail($id);
+        $percent = Discount::where('code', $code)->first();
 
         $categories = [
             'Electronics' => 0.05,
@@ -26,13 +29,9 @@ class ProductController extends Controller
         ];
 
         $category = $categories[$product->category] ?? 0;
+        $customer = $percent ? $percent->discount / 100 : 0;
         $standard = $product->price * (1 - $category);
-
-        $query = $request->query('code', '');
-        $check = Discount::where('code', $query)->first();
-
-        $customer = $check ? $check->discount / 100 : 0;
-        $discount = $product->price * (1 - $customer);
+        $discount = $standard * (1 - $customer);
 
         return response()->json([
             'id' => $product->id,
