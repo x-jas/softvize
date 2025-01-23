@@ -13,9 +13,10 @@ Built with Laravel and Vue.js
 2. cd softvize
 3. composer install
 4. npm install
-5. php artisan migrate
-6. npm run dev
-7. php artisan serve
+5. cp .env.example .env
+6. php artisan migrate
+7. npm run dev
+8. php artisan serve
 
 ## Structure
 
